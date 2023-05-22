@@ -11,6 +11,6 @@ namespace LawwlUp.Models
         public string Description { get; set; }
         public int CountQuestions { get; set; }
         public int Point { get; set; }
-
+        public string? Image { get; set; }
     }
 }

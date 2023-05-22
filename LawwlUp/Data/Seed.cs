@@ -6,6 +6,7 @@ namespace LawwlUp.Data
 {
     public class Seed
     {
+        private const string PATH_TO_IMAGES = "https://raw.githubusercontent.com/Tyuerl/LawwlUp/master/LawwlUp/Images/";
         public static void SeedData(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
@@ -19,21 +20,24 @@ namespace LawwlUp.Data
                     Title = "Тест 1",
                     Description = "Правовичка Общаги",
                     CountQuestions = 5,
-                    Point = 10
+                    Point = 10,
+                    Image = PATH_TO_IMAGES + "obshDu.jpg"
                 };
                 var Test2 = new Test()
                 {
                     Title = "Тест 2",
                     Description = "Правовичка Стипендии",
                     CountQuestions = 1,
-                    Point = 10
+                    Point = 10,
+                    Image = PATH_TO_IMAGES + "stipendia.jpg"
                 };
                 var Test3 = new Test()
                 {
                     Title = "Тест 3",
                     Description = "Правовичка Профсоюз",
                     CountQuestions = 1,
-                    Point = 10
+                    Point = 10,
+                    Image = PATH_TO_IMAGES + "profkom.png"
                 };
 
                 if (!context.Tests.Any())
@@ -48,7 +52,8 @@ namespace LawwlUp.Data
                             Title = "Тест 4",
                             Description = "Правовичка Даты",
                             CountQuestions = 1,
-                            Point = 5
+                            Point = 5,
+                            Image =  PATH_TO_IMAGES + "profcom.png"
                          },
                     });
                     context.SaveChanges();
@@ -60,17 +65,20 @@ namespace LawwlUp.Data
                         new Guide()
                         {
                             Title = "Приказ Минобрнауки Рф 27.12.2016 1663",
-                            Description = "Что-то про закон"
+                            Description = "Что-то про закон",
+                            Image = PATH_TO_IMAGES + "Minobrnauki.jpg"
                         },
                         new Guide()
                         {
                             Title = "Приказ Минобрнауки Рф 27.12.2016 1663",
-                            Description = "Что-то про закон"
-                        },                        
+                            Description = "Что-то про закон",
+                            Image = PATH_TO_IMAGES + "Minobrnauki.jpg"
+                        },
                         new Guide()
                         {
                             Title = "Приказ Минобрнауки Рф 27.12.2016 1663",
-                            Description = "Что-то про закон"
+                            Description = "Что-то про закон",
+                            Image = PATH_TO_IMAGES + "Minobrnauki.jpg"
                         },
                     });
                     context.SaveChanges();

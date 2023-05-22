@@ -1,11 +1,11 @@
-﻿@model IEnumerable<Test>
-
+﻿@model IEnumerable<Guide>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
-<h1>Это все ваши Тесты</h1>
+
+<h1 class="text-center"> Справочная информация</h1>
 
 
 <div class="container">
@@ -14,14 +14,13 @@
     {
         <div class="col-md-4">
             <div class="card mb-4 box-shadow">
-                @if(item.Image != "")
-                {<img src="@item.Image">}
+                <img src="@item.Image">
                 <div class="card-header"> @item.Title.</div>
                 <div class="card-body">
-                    <p class="card-text">@item.Description.</p>
-                    <p class="card-text"> Количетсов вопросов : @item.CountQuestions.</p>
+                    <p class="card-text">@item.Description</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Пройти Тест</button>
+                        <a type="btn btn-succes" asp-controller="Guide" asp-action="Detail" asp-route-id="@item.Id"
+                        class="btn btn-sm btn-outline-secondary">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -29,4 +28,3 @@
     }
     </div>
 </div>
-

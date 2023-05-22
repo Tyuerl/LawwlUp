@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LawwlUp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230521034509_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230522045600_InitialMigration1")]
+    partial class InitialMigration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,12 @@ namespace LawwlUp.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Information")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
@@ -129,6 +135,9 @@ namespace LawwlUp.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Point")
